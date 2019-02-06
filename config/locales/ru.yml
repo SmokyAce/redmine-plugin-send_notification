@@ -25,5 +25,4 @@ ru:
   email_body_issue_new_start_date: Новая плановая дата начала выполнения
   email_body_issue_new_due_date: Новый плановый срок выполнения
 
-
-
+  email_body_signature: 'Это автоматически созданное сообщение, просьба не отвечать на него!'

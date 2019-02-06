@@ -17,13 +17,13 @@ en:
   email_body_subject_issue_completed: Issue has completed
 
   email_body_greeting: Hello!
-  email_body_issue_confirmed_header: Issue #%{id} "%{subject}" admitted to work
-  email_body_issue_change_header: The timeline for performing the issue #%{id} "%{subject}" has chaned
-  email_body_issue_completed_header: Issue #%{id} "%{subject}" has completed
+  email_body_issue_confirmed_header: 'Issue #%{id} "%{subject}" admitted to work'
+  email_body_issue_change_header: 'The timeline for performing the issue #%{id} "%{subject}" has chaned'
+  email_body_issue_completed_header: 'Issue #%{id} "%{subject}" has completed'
   email_body_issue_start_date: Planned start date
   email_body_issue_due_date: Planned deadline
   email_body_issue_new_start_date: New planned start date
   email_body_issue_new_due_date: New planned deadline
 
-
-
+  email_body_signature: 'This is an automatically generated message, please do not reply to it!'
+  

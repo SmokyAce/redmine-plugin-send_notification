@@ -1,8 +1,11 @@
 <p><%= l(:email_body_greeting)%></p>
 
+<p><%= "https://%{host}/issues/%{id}" % { host: Setting.host_name, id: @issue.id } %>.</p>
 <p><%= l(:email_body_issue_change_header, id: @issue.id, subject: @issue.subject)%>.</p>
 
 <% if @issue.start_date? && @issue.due_date? && (@issue.disabled_core_fields & %w(start_date due_date)).empty? %>
     <p><%= l(:email_body_issue_new_start_date)%>: <b><%= format_date(@issue.start_date) %></b><br>
     <%= l(:email_body_issue_new_due_date)%>: <b><%= format_date(@issue.due_date) %></b></p>
 <% end %>
+
+<p style="font:size:x-small"><%= l(:email_body_signature)%></p>
