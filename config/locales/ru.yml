@@ -1,6 +1,6 @@
 # Russian strings go here for Rails i18n
 ru:
-  field_recipient_email: Email заказчика
+  field_recipient_email: Дополнительные эл. адреса
 
   label_issue_status_confirmed: Задача подтверждена
   label_issue_status_completed: Задача выполнена
