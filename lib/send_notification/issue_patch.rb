@@ -7,7 +7,7 @@ module SendNotification
     def self.included(base)
       base.class_eval do
 
-        safe_attributes 'recipient_email'
+        #safe_attributes 'recipient_email'
 
         after_save :check_before_send_recipient_email
 

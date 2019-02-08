@@ -4,8 +4,6 @@ end
 
 Issue.send(:include, SendNotification::IssuePatch)
 
-require_dependency 'send_notification/send_hooks'
-
 Redmine::Plugin.register :send_notification do
   name 'Send Notification plugin'
   author 'Sergey Vershinin'
