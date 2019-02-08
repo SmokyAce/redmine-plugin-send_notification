@@ -2,7 +2,6 @@ if (Rails.env == 'development')
   ActiveSupport::Dependencies.autoload_once_paths.reject!{|x| x =~ /^#{Regexp.escape(File.dirname(__FILE__))}/}
 end
 
-IssueQuery.send(:include, SendNotification::IssueQueryPatch)
 Issue.send(:include, SendNotification::IssuePatch)
 
 require_dependency 'send_notification/send_hooks'
@@ -22,7 +21,6 @@ Redmine::Plugin.register :send_notification do
   project_module :send_notification do
     permission :view_send_notification, :send_notification => :index
   end
-  permission :view_issue_recipient_email, :issues => :index
 
 end
 
