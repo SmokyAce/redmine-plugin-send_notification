@@ -11,7 +11,9 @@ class TechMailer < ActionMailer::Base
 
   def send_issue_change(issue)
     letter_prepare(issue)
-    mail to: @to, subject: l(:email_body_subject_issuen_change), from: Setting.mail_from
+    unless @to.blank?
+      mail to: @to, subject: l(:email_body_subject_issuen_change), from: Setting.mail_from
+    end
   end
 
   def send_issue_completed(issue)
@@ -27,7 +29,7 @@ class TechMailer < ActionMailer::Base
   private
 
   def letter_prepare(issue)
-    @to = TechMailer.extract_email_to_array(issue.recipient_email)
+    @to = TechMailer.extract_email_to_array(issue.custom_field_value(21))
     @text = issue.subject
     @issue = issue
   end

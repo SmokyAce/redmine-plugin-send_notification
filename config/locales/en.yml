@@ -7,10 +7,6 @@ en:
   label_issue_status_in_work: Issue in progress
   label_issue_status_in_stop: Issue in stop
   label_status_settings: Status settings
-  label_ldap_setting: LDAP Settings
-  label_ldap_use: Use LDAP
-  label_ldap_host: Server LDAP
-  label_ldap_user_id: Field LDAP for user ID
 
   email_body_subject_issue_confirmed: Issue is confirmed
   email_body_subject_issuen_change: Issue date has changed
@@ -26,4 +22,4 @@ en:
   email_body_issue_new_due_date: New planned deadline
 
   email_body_signature: 'This is an automatically generated message, please do not reply to it!'
-  
+  permission_view_send_notification: View Send notification

@@ -18,5 +18,11 @@ Redmine::Plugin.register :send_notification do
 
   settings partial: 'settings/send_notification',
            default: { ldap_use: 0 }
+           
+  project_module :send_notification do
+    permission :view_send_notification, :send_notification => :index
+  end
+  permission :view_issue_recipient_email, :issues => :index
+
 end
 

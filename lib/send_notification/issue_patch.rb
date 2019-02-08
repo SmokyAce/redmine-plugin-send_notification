@@ -12,17 +12,14 @@ module SendNotification
         after_save :check_before_send_recipient_email
 
         def check_before_send_recipient_email
-          unless recipient_email.blank?
-            # Task confirmed
-            if issue_status_confirmed?
-              TechMailer.send_issue_confirmed(self).deliver_now
-            # Task Completed
-            elsif issue_status_completed?
-              TechMailer.send_issue_completed(self).deliver_now
-            # Task due date change
-            elsif issue_change_dates?
-              TechMailer.send_issue_change(self).deliver_now
-            end
+          # Task confirmed
+          if issue_status_confirmed?
+            TechMailer.send_issue_confirmed(self).deliver_now
+          # Task Completed
+          elsif issue_status_completed?
+            TechMailer.send_issue_completed(self).deliver_now            # Task due date change
+          elsif issue_change_dates?
+            TechMailer.send_issue_change(self).deliver_now
           end
         end
 
