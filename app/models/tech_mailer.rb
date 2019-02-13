@@ -6,19 +6,19 @@ class TechMailer < ActionMailer::Base
 
   def send_issue_confirmed(issue)
     letter_prepare(issue)
-    mail to: @to, subject: l(:email_body_subject_issue_confirmed), from: Setting.mail_from
+    mail to: @to, subject: l(:email_body_subject_issue, project: issue.project.name, tracker: issue.tracker.name, id: issue.id, subject: issue.subject), from: Setting.mail_from
   end
 
   def send_issue_change(issue)
     letter_prepare(issue)
     unless @to.blank?
-      mail to: @to, subject: l(:email_body_subject_issuen_change), from: Setting.mail_from
+      mail to: @to, subject: l(:email_body_subject_issue, project: issue.project.name, tracker: issue.tracker.name, id: issue.id, subject: issue.subject), from: Setting.mail_from
     end
   end
 
   def send_issue_completed(issue)
     letter_prepare(issue)
-    mail to: @to, subject: l(:email_body_subject_issue_completed), from: Setting.mail_from
+    mail to: @to, subject: l(:email_body_subject_issue, project: issue.project.name, tracker: issue.tracker.name, id: issue.id, subject: issue.subject), from: Setting.mail_from
   end
 
   def self.extract_email_to_array(str)

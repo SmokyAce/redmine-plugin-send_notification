@@ -8,11 +8,13 @@ en:
   label_issue_status_in_stop: Issue in stop
   label_status_settings: Status settings
 
+  email_body_subject_issue: '[%{project} - %{tracker} #%{id}] %{subject}.'
   email_body_subject_issue_confirmed: Issue is confirmed
-  email_body_subject_issuen_change: Issue date has changed
+  email_body_subject_issue_change: Issue date has changed
   email_body_subject_issue_completed: Issue has completed
 
   email_body_greeting: Hello!
+  email_body_issue_updated: 'Issue #%{id} has been updated by %{author}.'
   email_body_issue_confirmed_header: 'Issue #%{id} "%{subject}" admitted to work'
   email_body_issue_change_header: 'The timeline for performing the issue #%{id} "%{subject}" has chaned'
   email_body_issue_completed_header: 'Issue #%{id} "%{subject}" has completed'

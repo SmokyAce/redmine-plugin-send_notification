@@ -1,11 +1,27 @@
 <p><%= l(:email_body_greeting)%></p>
+<p><%= l(:email_body_issue_updated, id: @issue.id, author: @issue.author.name)%></p>
+<hr>
 
-<p><%= "https://%{host}/issues/%{id}" % { host: Setting.host_name, id: @issue.id } %>.</p>
-<p><%= l(:email_body_issue_confirmed_header, id: @issue.id, subject: @issue.subject)%>.</p>
+<div>
+  <%= "https://%{host}/issues/%{id}" % { host: Setting.host_name, id: @issue.id } %>.
+  <%= l(:email_body_issue_confirmed_header, id: @issue.id, subject: @issue.subject)%>.
+</div>
+
+<p>
+  <%= "* Author: "   + @issue.author.name %><br> 
+  <%= "* Status: "   + @issue.status.name %><br>
+  <%= "* Priority: " + @issue.priority.name %><br>
+</p>
+<p><%= "" + @issue.description %></p>
 
 <% if @issue.start_date? && @issue.due_date? && (@issue.disabled_core_fields & %w(start_date due_date)).empty? %>
-    <p><%= l(:email_body_issue_start_date)%>: <b><%= format_date(@issue.start_date) %></b><br>
-      <%= l(:email_body_issue_due_date)%>: <b><%= format_date(@issue.due_date) %></b></p>
+  <p>
+    <%= l(:email_body_issue_start_date)%>: <b><%= format_date(@issue.start_date) %></b>
+    <br>
+    <%= l(:email_body_issue_due_date)%>: <b><%= format_date(@issue.due_date) %></b>
+  </p>
 <% end %>
 
+<br>
+<hr>
 <p style="font:size:x-small"><%= l(:email_body_signature)%></p>

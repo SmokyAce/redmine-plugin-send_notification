@@ -1,5 +1,6 @@
 <p><%= l(:email_body_greeting)%></p>
-
+<p><%= l(:email_body_issue_updated, id: @issue.id, author: @issue.author.name)%></p>
+<hr>
 
 <div>
   <%= "https://%{host}/issues/%{id}" % { host: Setting.host_name, id: @issue.id } %>.<br>
@@ -11,6 +12,7 @@
   <%= "* Status: "   + @issue.status.name %><br>
   <%= "* Priority: " + @issue.priority.name %><br>
 </p>
+<p><%= "" + @issue.description %></p>
 
 <% if @issue.start_date? && @issue.due_date? && (@issue.disabled_core_fields & %w(start_date due_date)).empty? %>
   <p>

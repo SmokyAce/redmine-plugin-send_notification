@@ -8,11 +8,13 @@ ru:
   label_issue_status_in_stop: Задача приостановлена
   label_status_settings: Настройки статусов
 
+  email_body_subject_issue: '[%{project} - %{tracker} #%{id}] %{subject}.'
   email_body_subject_issue_confirmed: Задача включена в план
-  email_body_subject_issuen_change: Плановые сроки выполнения задачи изменились
+  email_body_subject_issue_change: Плановые сроки выполнения задачи изменились
   email_body_subject_issue_completed: Задача выполнена
 
   email_body_greeting: Добрый день!
+  email_body_issue_updated: 'Задача #%{id} была обновлена %{author}.'
   email_body_issue_confirmed_header: Задача №%{id} "%{subject}" принята в работу
   email_body_issue_change_header: Сроки выполнения по задаче №%{id} "%{subject}" изменились
   email_body_issue_completed_header: Задача №%{id} "%{subject}" выполнена
